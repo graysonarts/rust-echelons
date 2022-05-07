@@ -1,8 +1,5 @@
-use echelons::errors::UserFacingResult;
-use log::{info, LevelFilter};
 use std::path::{Path, PathBuf};
 use structopt::StructOpt;
-use structopt_flags::LogLevel;
 
 #[derive(Debug, StructOpt)]
 #[structopt(
@@ -26,7 +23,7 @@ pub(crate) struct Options {
     pub(crate) project_name: Option<String>,
 }
 
-fn root_directory(root: &PathBuf, filename: &str) -> Option<PathBuf> {
+fn root_directory(root: &Path, filename: &str) -> Option<PathBuf> {
     Some(root.join(filename))
 }
 
@@ -46,7 +43,7 @@ fn config_directory(sub_path: PathBuf) -> Option<PathBuf> {
     dirs::config_dir().map(|p| p.join(sub_path))
 }
 
-pub(crate) fn find_config(root: &PathBuf) -> Option<PathBuf> {
+pub(crate) fn find_config(root: &Path) -> Option<PathBuf> {
     let search_paths = vec![
         root_directory(root, "echelons.toml"),
         current_directory("echelons.toml"),

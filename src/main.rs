@@ -1,14 +1,9 @@
 mod options;
 
-use std::{
-    fs::create_dir,
-    path::{Path, PathBuf},
-};
+use std::fs::create_dir;
+use std::path::PathBuf;
 
-use echelons::{
-    self,
-    errors::{UserError, UserFacingResult},
-};
+use echelons::errors::{UserError, UserFacingResult};
 use log::{error, info, LevelFilter};
 use options::Options;
 use structopt::StructOpt;
@@ -24,7 +19,7 @@ fn init_logger(log_level: LevelFilter) {
 
 fn ensure_directory(p: &PathBuf) -> UserFacingResult<()> {
     if !p.exists() {
-        create_dir(p).map_err(|e| UserError::from(e))?;
+        create_dir(p).map_err(UserError::from)?;
     }
 
     Ok(())
