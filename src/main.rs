@@ -4,7 +4,7 @@ use std::fs::create_dir;
 use std::path::PathBuf;
 
 use echelons::errors::{UserError, UserFacingResult};
-use log::{error, info, LevelFilter};
+use log::{debug, error, info, LevelFilter};
 use options::Options;
 use structopt::StructOpt;
 use structopt_flags::LogLevel;
@@ -46,10 +46,23 @@ fn run() -> UserFacingResult<()> {
         .unwrap_or(opts.root_directory);
     ensure_directory(&target_directory)?;
 
-    info!(
-        "Config: {:?}, Target Directory: {:?}",
-        config_filename, target_directory
-    );
+    let echelons = echelons::EchelonsConfiguration::load(&config_filename, &target_directory)?;
+    let results: Vec<_> = echelons
+        .paths
+        .iter()
+        .map(|p| {
+            info!("Creating {:?}", p);
+            (p, ensure_directory(p))
+        })
+        .collect();
+
+    results
+        .into_iter()
+        .filter(|x| x.1.is_err())
+        .for_each(|(p, err)| {
+            error!("{:?} failed: {}", p, err.err().unwrap());
+        });
+
     Ok(())
 }
 
