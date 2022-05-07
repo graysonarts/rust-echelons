@@ -1,0 +1,23 @@
+prefix_order = true
+paths = [
+    "Project_Files",
+    "Media",
+    "Assets"
+]
+
+[Project_Files]
+paths = [
+    "Resolve",
+    "After Effects"
+]
+
+[Media]
+paths = [
+    "Footage"
+]
+
+[Assets]
+paths = [
+    "Royalty Free",
+    "Creative Commons"
+]

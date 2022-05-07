@@ -1,0 +1,13 @@
+[package]
+edition = "2021"
+name = "echelons"
+version = "0.1.0"
+
+[dependencies]
+log = "0"
+pretty_env_logger = "0"
+serde = { version = "1", features = [ "derive" ]}
+toml = "0"
+structopt = "0"
+structopt-flags = "0"
+dirs = "4"
