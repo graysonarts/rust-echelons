@@ -2,6 +2,11 @@
 edition = "2021"
 name = "echelons"
 version = "0.0.0"
+description = "A CLI tool that creates repeatable directory hierarchies for projects"
+license = "MIT"
+repository = "https://github.com/graysonarts/rust-echelons"
+homepage = "https://github.com/graysonarts/rust-echelons"
+documentation = "https://github.com/graysonarts/rust-echelons"
 
 [dependencies]
 log = "0"
