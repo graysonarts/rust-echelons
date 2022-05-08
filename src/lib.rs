@@ -5,7 +5,6 @@ use std::{
 };
 
 use errors::LibraryResult;
-use log::debug;
 use serde::Deserialize;
 use toml::Value;
 
@@ -38,15 +37,10 @@ impl EchelonsConfiguration {
         let path_count = top_paths.len();
         let magnitude = path_count.log10() + 1;
 
-        let top_paths: Vec<_> = top_paths
+        let top_paths = top_paths
             .into_iter()
-            .map(|(idx, p)| create_path_spec(target, idx, magnitude, p))
-            .collect();
-
-        let paths: Vec<_> = top_paths
-            .into_iter()
-            .flat_map(|p| expand_path(&p, &config))
-            .collect();
+            .map(|(idx, p)| create_path_spec(target, idx, magnitude, p));
+        let paths: Vec<_> = top_paths.flat_map(|p| expand_path(&p, &config)).collect();
 
         Ok(Self { paths })
     }
