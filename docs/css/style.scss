@@ -6,6 +6,9 @@ $orange-500: #f0af30;
 $orange-300: #715217;
 $orange-400: #dd9304;
 
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono&display=swap");
+
 html,
 body {
   margin: 0;
@@ -14,7 +17,8 @@ body {
   min-height: 100vh;
   color: $white-900;
   font-size: 100%;
-  font-family: Arial, Helvetica, sans-serif; // Poppins
+  font-family: "Poppins", Arial, Helvetica, sans-serif; // Poppins
+  font-weight: 400;
 }
 
 section,
@@ -29,7 +33,7 @@ li {
   margin: 0;
   padding: 0;
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 ul {
@@ -38,7 +42,7 @@ ul {
 
 pre,
 .code {
-  font-family: "Courier New", Courier, monospace; // TODO Space Mono
+  font-family: "Space Mono", "Courier New", Courier, monospace; // TODO Space Mono
   color: $orange-500;
   font-size: 1.25rem;
 }
@@ -49,22 +53,4 @@ pre,
 
 @import "hero";
 @import "install";
-
-section.configuration {
-  background: $blue-900;
-  color: $black-000;
-  padding: 4rem 0;
-  .left {
-    @include container-position;
-  }
-
-  h1 {
-    color: $blue-500;
-    font-size: 3em;
-  }
-
-  pre,
-  .code {
-    color: $orange-400;
-  }
-}
+@import "configuration";
