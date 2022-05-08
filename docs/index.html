@@ -9,6 +9,19 @@
   </head>
   <body>
     <section class="hero">
+      <svg
+        class="hero-blob"
+        width="876"
+        height="990"
+        viewBox="0 0 876 990"
+        fill="none"
+      >
+        <path
+          d="M354.561 134.222C354.561 -167.778 875.061 134.222 875.061 134.222V854.222C875.061 854.222 -8.439 1159.22 0.0609409 854.222C8.56088 549.222 354.561 436.222 354.561 134.222Z"
+          fill="#452BE1"
+        />
+      </svg>
+
       <header>
         <h1>
           <svg width="273" height="55" viewBox="0 0 273 55" fill="none">
@@ -25,12 +38,16 @@
       </header>
       <div class="hero">
         <h1>Repeatable Directory Structures For Your Projects</h1>
-        <img src="assests/terminal.png" alt="Screenshot of echelons in use" />
+        <img src="assets/demo.png" alt="Screenshot of echelons in use" />
       </div>
       <div class="usage">
         <h1>Usage</h1>
         <pre class="lg">
 echelons [-vvvv] [-c config_file] root_directory [project_name]</pre
+        >
+        <pre class="md">
+echelons [-vvvv] [-c config_file] \
+          root_directory  [project_name]</pre
         >
         <pre class="sm">
 echelons [-vvvv] [-c config_file] \
@@ -65,32 +82,48 @@ echelons [-vvvv] [-c config_file] \
       </ul>
     </section>
     <section class="configuration">
-      <div class="left">
-        <h1>Configuration</h1>
-        <div class="docs">
-          <p>
-            Simply create a toml file called
-            <span class="code">echelons.toml</span> and run
-            <span class="code">echelons</span> from the directory
-          </p>
-          <pre>
+      <svg
+        width="1424"
+        height="1127"
+        viewBox="0 0 1424 1127"
+        class="conf-blob"
+        fill="none"
+      >
+        <path
+          d="M688 0H1424L1300.79 941.532C1300.79 941.532 -182.532 1358.84 18.7831 941.532C220.098 524.228 850 564.5 688 0Z"
+          fill="#F1EFFF"
+        />
+      </svg>
+      <div class="container">
+        <div class="left">
+          <h1>Configuration</h1>
+          <div class="docs">
+            <p>
+              Simply create a toml file called
+              <span class="code">echelons.toml</span> and run
+              <span class="code">echelons</span> from the directory
+            </p>
+            <pre>
 paths = [
-  "Top_Level_1",
-  "Top_Level_2"
+"Top_Level_1",
+"Top_Level_2"
 ]
 
 [Top_Level_1]
 paths = [ "Something" ]
-          </pre>
-          <p>The above example will create 3 directories</p>
-          <pre>
+              </pre
+            >
+            <p>The above example will create 3 directories</p>
+            <pre>
 0 Top_Level_1/
 0 Top_Level_1/0 Something
 1 Top_Level_2/
-          </pre>
+              </pre
+            >
+          </div>
         </div>
+        <img src="assets/conf.png" alt="Example Configuration" />
       </div>
-      <img src="" alt="" />
     </section>
   </body>
 </html>

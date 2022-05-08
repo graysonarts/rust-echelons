@@ -40,6 +40,11 @@ pre,
 
 section.hero {
   background: #4b30f0;
+  overflow: hidden;
+}
+
+section.hero .hero-blob {
+  display: none;
 }
 
 section.hero header,
@@ -80,6 +85,14 @@ section.hero .usage h1 {
   font-weight: 700;
 }
 
+section.hero .usage .sm {
+  display: block;
+}
+
+section.hero .usage .md {
+  display: none;
+}
+
 section.hero .usage .lg {
   display: none;
 }
@@ -88,6 +101,48 @@ section.hero .offscreen {
   position: absolute;
   top: -9000px;
   display: block;
+}
+
+@media only screen and (min-width: 800px) {
+  section.hero {
+    position: relative;
+    z-index: 0;
+  }
+  section.hero .hero-blob {
+    display: block;
+    position: absolute;
+    right: -5px;
+    z-index: -10;
+  }
+  section.hero header h1 {
+    padding-top: 1.5rem;
+  }
+  section.hero .hero {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  section.hero .hero h1 {
+    line-height: 1em;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    margin-top: -2.5em;
+  }
+  section.hero .hero img {
+    display: block;
+    max-height: 780px;
+    justify-self: flex-end;
+  }
+  section.hero .usage .sm {
+    display: none;
+  }
+  section.hero .usage .md {
+    display: block;
+  }
+  section.hero .usage .lg {
+    display: none;
+  }
 }
 
 section.install {
@@ -148,9 +203,8 @@ section.configuration {
   padding: 4rem 0;
 }
 
-section.configuration .left {
-  width: 80%;
-  margin: 0 auto;
+section.configuration .conf-blob {
+  display: none;
 }
 
 section.configuration h1 {
@@ -161,5 +215,35 @@ section.configuration h1 {
 section.configuration pre,
 section.configuration .code {
   color: #dd9304;
+}
+
+@media only screen and (min-width: 800px) {
+  section.configuration {
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+  }
+  section.configuration .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 3.5rem;
+    width: 80%;
+    margin: 0 auto;
+  }
+  section.configuration .container .docs {
+    max-width: 30ch;
+  }
+  section.configuration .conf-blob {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: -5;
+    z-index: -1;
+  }
+  section.configuration img {
+    display: block;
+    justify-self: flex-end;
+  }
 }
 /*# sourceMappingURL=style.css.map */

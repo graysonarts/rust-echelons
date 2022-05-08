@@ -1,5 +1,11 @@
 section.hero {
   background: $blue-500;
+  overflow: hidden;
+
+  .hero-blob {
+    display: none;
+  }
+
   header,
   .hero,
   .usage {
@@ -30,6 +36,12 @@ section.hero {
       font-size: 2rem;
       font-weight: 700;
     }
+    .sm {
+      display: block;
+    }
+    .md {
+      display: none;
+    }
     .lg {
       display: none;
     }
@@ -39,5 +51,49 @@ section.hero {
     position: absolute;
     top: -9000px;
     display: block;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  section.hero {
+    position: relative;
+    z-index: 0;
+    .hero-blob {
+      display: block;
+      position: absolute;
+      right: -5px;
+      z-index: -10;
+    }
+    header h1 {
+      padding-top: 1.5rem;
+    }
+
+    .hero {
+      display: flex;
+      h1 {
+        line-height: 1em;
+        // padding-top: 3rem;
+        align-self: center;
+        margin-top: -2.5em;
+      }
+
+      img {
+        display: block;
+        max-height: 780px;
+        justify-self: flex-end;
+      }
+    }
+
+    .usage {
+      .sm {
+        display: none;
+      }
+      .md {
+        display: block;
+      }
+      .lg {
+        display: none;
+      }
+    }
   }
 }
