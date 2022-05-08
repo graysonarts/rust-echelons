@@ -1,0 +1,157 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  color: #ffffff;
+  font-size: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+section,
+header,
+h1,
+h2,
+h3,
+h4,
+h5,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+ul {
+  list-style: none;
+}
+
+pre,
+.code {
+  font-family: "Courier New", Courier, monospace;
+  color: #f0af30;
+  font-size: 1.25rem;
+}
+
+section.hero {
+  background: #4b30f0;
+}
+
+section.hero header,
+section.hero .hero,
+section.hero .usage {
+  width: 80%;
+  margin: 0 auto;
+}
+
+section.hero .hero {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+section.hero .hero h1 {
+  max-width: 10ch;
+  margin-top: 4rem;
+  font-size: 4rem;
+  margin-bottom: 4rem;
+  line-height: 0.9em;
+}
+
+section.hero .hero img {
+  display: none;
+}
+
+section.hero .usage {
+  padding-bottom: 4rem;
+}
+
+section.hero .usage h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+section.hero .usage .lg {
+  display: none;
+}
+
+section.hero .offscreen {
+  position: absolute;
+  top: -9000px;
+  display: block;
+}
+
+section.install {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  color: #4b30f0;
+}
+
+section.install li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 3.1rem;
+}
+
+section.install li a {
+  font-size: 2.25rem;
+  text-decoration: none;
+}
+
+section.install li a:before {
+  content: ">";
+  color: #715217;
+  font-size: 2rem;
+  text-align: center;
+  padding-right: 0.5rem;
+  margin-left: -1em;
+  opacity: 0;
+  -webkit-transition: opacity 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: opacity 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+section.install li a:hover:before {
+  opacity: 1;
+}
+
+section.install li .label {
+  text-transform: uppercase;
+  color: #715217;
+  font-size: 1.25rem;
+  letter-spacing: 0.2rem;
+}
+
+section.configuration {
+  background: #eae8fa;
+  color: #000000;
+  padding: 4rem 0;
+}
+
+section.configuration .left {
+  width: 80%;
+  margin: 0 auto;
+}
+
+section.configuration h1 {
+  color: #4b30f0;
+  font-size: 3em;
+}
+
+section.configuration pre,
+section.configuration .code {
+  color: #dd9304;
+}
+/*# sourceMappingURL=style.css.map */

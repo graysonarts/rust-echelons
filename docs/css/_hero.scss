@@ -1,0 +1,43 @@
+section.hero {
+  background: $blue-500;
+  header,
+  .hero,
+  .usage {
+    @include container-position;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: row;
+
+    h1 {
+      max-width: 10ch;
+      margin-top: 4rem;
+      font-size: 4rem;
+      margin-bottom: 4rem;
+      line-height: 0.9em;
+    }
+
+    img {
+      display: none;
+    }
+  }
+
+  .usage {
+    padding-bottom: 4rem;
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    .lg {
+      display: none;
+    }
+  }
+
+  .offscreen {
+    position: absolute;
+    top: -9000px;
+    display: block;
+  }
+}
