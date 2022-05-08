@@ -6,7 +6,7 @@ on:
 jobs:
   build-binaries:
     name: build ${{ matrix.target }} package
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
