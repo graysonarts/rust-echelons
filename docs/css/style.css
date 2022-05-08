@@ -247,7 +247,7 @@ section.configuration img {
     display: block;
     position: absolute;
     top: 0;
-    right: -5;
+    right: -5px;
     z-index: -1;
   }
   section.configuration img {
