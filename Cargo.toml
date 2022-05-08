@@ -5,7 +5,7 @@ version = "1.0.0"
 description = "A CLI tool that creates repeatable directory hierarchies for projects"
 license = "MIT"
 repository = "https://github.com/graysonarts/rust-echelons"
-homepage = "https://github.com/graysonarts/rust-echelons"
+homepage = "https://graysonarts.github.com/rust-echelons"
 documentation = "https://github.com/graysonarts/rust-echelons"
 
 [dependencies]
