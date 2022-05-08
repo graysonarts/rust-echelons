@@ -1,0 +1,35 @@
+on:
+  tags:
+    - "v*"
+
+jobs:
+  build-binaries:
+    name: build ${{ matrix.target }} package
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - target: x86_64-pc-windows-gnu
+            archive: zip
+          - target: x86_64-unknown-linux-musl
+            archive: tar.gz
+          - target: x86_64-apple-darwin
+            archive: zip
+    steps:
+      - uses: actions/checkout@v2
+      - name: "Compile"
+        id: compile
+        uses: rust-build/rust-build.action@v1.3.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          RUSTTARGET: ${{ matrix.target }}
+          ARCHIVE_TYPES: ${{ matrix.archive }}
+          UPLOAD_MODE: none
+      - name: "Upload Artifact"
+        uses: actions/upload-artifact@v3
+        with:
+          name: "{{ matrix.target }}"
+          path: |
+            ${{ steps.compile.outputs.BUILT_ARCHIVE }}
+            ${{ steps.compile.outputs.BUILT_CHECKSUM }}
