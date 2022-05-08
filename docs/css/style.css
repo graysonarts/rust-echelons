@@ -203,6 +203,11 @@ section.configuration {
   padding: 4rem 0;
 }
 
+section.configuration .container {
+  width: 80%;
+  margin: 0 auto;
+}
+
 section.configuration .conf-blob {
   display: none;
 }
@@ -215,6 +220,10 @@ section.configuration h1 {
 section.configuration pre,
 section.configuration .code {
   color: #dd9304;
+}
+
+section.configuration img {
+  display: none;
 }
 
 @media only screen and (min-width: 800px) {
@@ -245,5 +254,50 @@ section.configuration .code {
     display: block;
     justify-self: flex-end;
   }
+}
+
+section.footer {
+  background: #4b30f0;
+}
+
+section.footer footer {
+  width: 80%;
+  margin: 0 auto;
+  padding: 1.5rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+section.footer footer svg {
+  height: 100%;
+  fill: #eae8fa;
+}
+
+section.footer footer .social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1.5rem;
+  margin-right: 2.5rem;
+}
+
+section.footer footer .social a {
+  display: block;
+}
+
+section.footer a {
+  color: #f0af30;
+}
+
+section.footer a:hover {
+  color: #dd9304;
+}
+
+section.footer a:visited {
+  color: #dd9304;
 }
 /*# sourceMappingURL=style.css.map */

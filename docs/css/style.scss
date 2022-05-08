@@ -54,3 +54,42 @@ pre,
 @import "hero";
 @import "install";
 @import "configuration";
+
+section.footer {
+  background: $blue-500;
+
+  footer {
+    @include container-position;
+    padding: 1.5rem 0;
+    display: flex;
+    justify-content: space-between;
+
+    svg {
+      height: 100%;
+      fill: $blue-900;
+    }
+
+    .social {
+      display: flex;
+      gap: 1.5rem;
+
+      a {
+        display: block;
+      }
+
+      margin-right: 2.5rem;
+    }
+  }
+
+  a {
+    color: $orange-500;
+
+    &:hover {
+      color: $orange-400;
+    }
+
+    &:visited {
+      color: $orange-400;
+    }
+  }
+}
