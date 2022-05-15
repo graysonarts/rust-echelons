@@ -1,7 +1,6 @@
 mod options;
 
-use std::fs::create_dir;
-use std::path::PathBuf;
+use std::{fs::create_dir, path::Path};
 
 use echelons::errors::{UserError, UserFacingResult};
 use log::{error, info, LevelFilter};
@@ -17,7 +16,7 @@ fn init_logger(log_level: LevelFilter) {
         .init();
 }
 
-fn ensure_directory(p: &PathBuf) -> UserFacingResult<()> {
+fn ensure_directory(p: &Path) -> UserFacingResult<()> {
     if !p.exists() {
         create_dir(p).map_err(UserError::from)?;
     }
