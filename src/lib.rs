@@ -11,6 +11,7 @@ use toml::Value;
 use crate::errors::LibraryError;
 
 pub mod errors;
+mod test;
 
 #[derive(Debug, Deserialize)]
 pub struct EchelonsConfiguration {
