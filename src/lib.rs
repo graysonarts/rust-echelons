@@ -1,4 +1,3 @@
-#![feature(int_log)]
 use std::{
     iter,
     path::{Path, PathBuf},
@@ -40,7 +39,7 @@ impl EchelonsConfiguration {
         let path_count = config.paths.len();
         let magnitude = config.padding.unwrap_or_else(|| match path_count {
             0 => 1,
-            x => x.log10() + 1,
+            x => x.ilog10() + 1,
         });
 
         let top_paths = config
@@ -104,7 +103,7 @@ fn pad(num: usize, width: u32) -> String {
     let needed_zeros = if num == 0 {
         width - 1
     } else {
-        let mag = num.log10() + 1;
+        let mag = num.ilog10() + 1;
         width - mag
     };
     let result: Vec<_> = iter::repeat_with(|| "0".to_owned())
